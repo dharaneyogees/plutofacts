@@ -1,0 +1,115 @@
+To combine the CSS and JavaScript into the `index.html` file, you can include the CSS within a `<style>` tag in the `<head>` section and the JavaScript within a `<script>` tag before the closing `</body>` tag. Here's how you can do it:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pluto Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        #app {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #0077cc;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 20px;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .fact {
+            font-weight: bold;
+        }
+
+        .description {
+            margin-top: 5px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>Facts About Pluto</h1>
+        <ul id="facts-list"></ul>
+    </div>
+    <script>
+        const facts = [
+            {
+                "fact": "Pluto was reclassified as a dwarf planet in 2006.",
+                "description": "It was originally considered the ninth planet in our solar system."
+            },
+            {
+                "fact": "Pluto is located in the Kuiper Belt.",
+                "description": "The Kuiper Belt is a region of the solar system beyond Neptune filled with small icy bodies."
+            },
+            {
+                "fact": "Pluto has five known moons.",
+                "description": "The largest moon is Charon, which is about half the size of Pluto."
+            },
+            {
+                "fact": "Pluto's orbit is highly elliptical.",
+                "description": "Its orbit sometimes brings it closer to the Sun than Neptune."
+            },
+            {
+                "fact": "Pluto's surface is covered with ice.",
+                "description": "The ice is primarily composed of nitrogen, methane, and carbon monoxide."
+            },
+            {
+                "fact": "Pluto has a thin atmosphere.",
+                "description": "The atmosphere is primarily composed of nitrogen with traces of methane and carbon monoxide."
+            },
+            {
+                "fact": "Pluto's diameter is about 2,377 kilometers (1,477 miles).",
+                "description": "This makes it smaller than Earth's Moon."
+            },
+            {
+                "fact": "Pluto takes 248 Earth years to complete one orbit around the Sun.",
+                "description": "Its long orbital period is due to its great distance from the Sun."
+            },
+            {
+                "fact": "Pluto was discovered in 1930 by Clyde Tombaugh.",
+                "description": "The discovery was made at the Lowell Observatory in Arizona."
+            },
+            {
+                "fact": "Pluto has a heart-shaped glacier called Tombaugh Regio.",
+                "description": "This region is named after Pluto's discoverer, Clyde Tombaugh."
+            }
+        ];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const factsList = document.getElementById('facts-list');
+            facts.forEach(fact => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `<div class="fact">${fact.fact}</div><div class="description">${fact.description}</div>`;
+                factsList.appendChild(listItem);
+            });
+        });
+    </script>
+</body>
+</html>
+```
+
+This single HTML file now contains all the necessary CSS and JavaScript to display the facts about Pluto. You can open this file in a web browser to see the application in action.
